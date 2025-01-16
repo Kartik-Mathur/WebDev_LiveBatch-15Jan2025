@@ -1,0 +1,14 @@
+## Advanced Commands
+### Tasks Running:
+- ps (View current processes)
+- top (View running processes interactively)
+
+### Kill Tasks:
+- kill (Terminate a process by its PID)
+
+### Change Permissions:
+- chmod (Change file/directory permissions)
+- chown (Change ownership of files or directories)
+
+### Other:
+- ping (Check network connectivity and latency)

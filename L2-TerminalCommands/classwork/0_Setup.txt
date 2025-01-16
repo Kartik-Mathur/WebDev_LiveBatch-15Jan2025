@@ -1,0 +1,27 @@
+
+Start the following things
+
+Mac/Linux:
+    - Terminal
+
+Windows:
+    - Powershell
+
+
+Commands Structure:
+1. pwd
+2. ls
+3. cd - To change director(Folder)
+4. mkdir - Create directory(Folder)
+5. touch - To create files
+6. echo > file_name - To create file in windows
+7. vim - To write inside files
+
+# How to use vim
+1. File open karo vim se 
+    - vim file_name
+2. Press i
+3. Add the content inside the file 
+4. Press esc on keyboard
+5. Type :wq 
+6. hit enter 
