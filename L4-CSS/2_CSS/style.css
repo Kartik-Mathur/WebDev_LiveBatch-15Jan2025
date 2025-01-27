@@ -1,0 +1,11 @@
+.myDiv {
+    /* For class we use dot operator */
+    color: orange;
+    background-color: black;
+}
+
+/* For ids we use # */
+#boy {
+    color: blue;
+    background-color: bisque;
+}
