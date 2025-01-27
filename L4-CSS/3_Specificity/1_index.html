@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Specificity</title>
+    <style>
+        #div{
+            color: blue;
+        }
+
+        .div{
+            color: red;
+        }
+
+        div{
+            color: orange;
+        }
+
+        div{
+            color: purple !important;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="div" id="div">
+        I am a div
+    </div>
+</body>
+</html>

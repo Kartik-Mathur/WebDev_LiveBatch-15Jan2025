@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Specificity</title>
+
+    <style>
+        /*   Priority clash between ids: Later one would get applied, that is blue color      
+        #div {
+            color: orange;
+        }
+
+        #div {
+            color: blue;
+        } */
+
+        div {
+            /* Not important takes priority over everything: class, inline, ids */
+            color: palevioletred !important;
+        }
+
+        div {
+            /* !important priority clash the later one would get applied therefore making the div color 
+            red */
+            color: red !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Inline CSS takes priority over all class, id and element selector -->
+    <div class="div" id="div" style="color: grey;">
+        I am a div
+    </div>
+</body>
+
+</html>
