@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            /* To use flexboxes: Parent ko displey flex kro */
+            display: flex;
+            background-color: lightblue;
+            flex-wrap: wrap;
+            height: 70vh;
+            justify-content: center;
+            align-items: baseline;
+        }
+
+        .div {
+            height: 40px;
+            width: 40px;
+            margin: 10px;
+            background-color: orange;
+        }
+
+        /* For understanding baseline property in align-items */
+        .div-1 {
+            padding-top: 10px;
+            flex-grow: 2;
+        }
+
+        .div-4 {
+            padding-top:40px;
+        }
+
+        .div-5 {
+            padding-top: 50px;
+            flex-grow: 1;
+        }
+
+        .div-6 {
+            padding-top: 60px;
+        }
+
+        /* Order */
+        .div-8 {
+            order: -1;
+        }
+
+
+        /* Small Container ki css */
+        .small-container{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: baseline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="div div-0">0</div> -->
+        <div class="div div-1">1</div>
+        <div class="small-container">
+            <div class="div div-2">2</div>
+            <div class="div div-3">3</div>
+            <div class="div div-4">4</div>
+        </div>
+        <div class="div div-5">5</div>
+        <div class="div div-6">6</div>
+        <div class="div div-7">7</div>
+        <div class="div div-8">8</div>
+    </div>
+</body>
+
+</html>

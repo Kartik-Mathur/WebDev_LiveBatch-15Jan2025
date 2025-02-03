@@ -1,0 +1,15 @@
+div{
+    /* background-color: orange; */
+    height: 40px;
+    margin: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.odd {
+    background-color: orange;
+}
+
+.even {
+    background-color: lightcoral;
+}
