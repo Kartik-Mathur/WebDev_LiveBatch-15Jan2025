@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <style>
+        .div-1{
+            background-color: orange;
+            grid-area: el1;
+        }
+        .div-2{
+            background-color: pink;
+            grid-area: div2;
+        }
+        .div-3{
+            background-color: rebeccapurple;
+            grid-area: div3;
+        }
+        .div-4{
+            background-color: red;
+            grid-area: div4;
+        }
+        .div-5{
+            background-color: chartreuse;
+            grid-area: div5;
+        }
+        .div-6{
+            background-color: darkgoldenrod;
+            grid-area: div6;
+        }
+        .div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: 800;
+            font-size: 30px;
+            
+        }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: grid;
+            border: 1px solid black;
+            /* background-color: orange; */
+            height: 600px;
+            width: 600px;
+            margin: auto;
+            margin-top: 80px;
+            grid-template-rows: repeat(4, 50px);
+            /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+            grid-template-columns: repeat(4, 50px);
+            grid-template-areas:
+            "div3 div2 div2 el1"
+            "div3 div6 div6 div4"
+            "div3 div6 div6 div4"
+            "div5 div5 div5 div5"
+            ;
+            justify-content: space-evenly;
+            align-content: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="div div-1">I</div>
+        <div class="div div-2">II</div>
+        <div class="div div-3">III</div>
+        <div class="div div-4">IV</div>
+        <div class="div div-5">V</div>
+        <div class="div div-6">VI</div>
+    </div>
+
+
+</body>
+
+</html>
