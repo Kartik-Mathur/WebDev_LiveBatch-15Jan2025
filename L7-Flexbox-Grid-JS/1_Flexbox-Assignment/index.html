@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-Assignment</title>
+
+    <style>
+        /* Heading CSS */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: rgb(53, 53, 53);
+            color: white;
+            padding: 30px;
+            font-size: 35px;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 800;
+        }
+
+        .container{
+            background-color: rgb(234, 234, 234);
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .card{
+            background-color: rgb(255, 255, 255);
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px #acacac;
+            text-align: center;
+            font-family: sans-serif;
+            padding: 10px;
+            padding-top: 20px;
+        }
+
+        /* Child selector is via space  */
+        .card img{
+            border-radius: 10px;
+        }
+
+        .card h2{
+            margin-top: 10px;
+        }
+
+        .card p{
+            margin-top: 15px;
+            color: rgb(121, 121, 121);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        FlexBox Card Layout
+    </nav>
+
+    <div class="container">
+
+        <!-- Card_1 Starts here -->
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRXxfn1j1vKFy8yJeBGl2AS6Dcah-lKgHofg&s" alt="A woman picking up a pink color flower in a forest">
+            <h2>Card Title 1</h2>
+            <p>Short description for card 1.</p>
+        </div>
+        <!-- Card_1 Ends here -->
+
+
+        <!-- Card_2 Starts here -->
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRXxfn1j1vKFy8yJeBGl2AS6Dcah-lKgHofg&s" alt="A woman picking up a pink color flower in a forest">
+            <h2>Card Title 2</h2>
+            <p>Short description for card 2.</p>
+        </div>
+        <!-- Card_2 Ends here -->
+
+        <!-- Card_3 Starts here -->
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRXxfn1j1vKFy8yJeBGl2AS6Dcah-lKgHofg&s" alt="A woman picking up a pink color flower in a forest">
+            <h2>Card Title 3</h2>
+            <p>Short description for card 3.</p>
+        </div>
+        <!-- Card_3 Ends here -->
+
+        <!-- Card_4 Starts here -->
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRXxfn1j1vKFy8yJeBGl2AS6Dcah-lKgHofg&s" alt="A woman picking up a pink color flower in a forest">
+            <h2>Card Title 4</h2>
+            <p>Short description for card 4.</p>
+        </div>
+        <!-- Card_4 Ends here -->
+
+    </div>
+
+
+</body>
+
+</html>
