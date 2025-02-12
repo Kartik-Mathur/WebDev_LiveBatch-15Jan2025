@@ -1,0 +1,72 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    border: 1px solid rgb(224, 224, 224);
+    /* position: sticky; */
+    /* top: 0; */
+    background-color: white;
+}
+
+.navbar div {
+    width: 400px;
+    /* background-color: orange; */
+}
+
+.logo-info {
+    font-family: sans-serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.search-box {
+    background-color: #F9F9F9 !important;
+    display: flex;
+    margin-left: 10px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.search-box input {
+    flex-grow: 1;
+    border: none;
+    background-color: #F9F9F9;
+    margin-left: 5px;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+
+
+
+
+
+.user-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* user-info class ke andar jo img tag hai vo */
+.user-info img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.user-info a{
+    color: #6B6B6B;
+    text-decoration: none;
+}
