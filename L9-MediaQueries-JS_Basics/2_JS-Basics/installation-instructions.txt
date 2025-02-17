@@ -1,0 +1,10 @@
+1. Install "Code Runner" on vs code
+
+To download nodejs Visit: https://nodejs.org/en/download
+2. Install nodejs to run JS on local machine/System
+    - MacOs: "homebrew" install karlo first - google it
+    - brew install node@23 - this will install nodejs
+    - To use some other version: (nvm use _node_version_number)
+    - To see all available versions: nvm list
+
+3. Windows wale direct setup ko download karlo

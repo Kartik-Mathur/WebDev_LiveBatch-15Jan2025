@@ -5,15 +5,17 @@
 }
 
 
-.carousel{
+.carousel {
     height: calc(100vh - 50px);
     background-color: brown;
+    /* width: 100vw; */
 }
 
 
 
 
-
+/* Pre Defined Carousel ki css */
+/*
 .slider {
     width: 100vw;
     text-align: center;
@@ -113,3 +115,4 @@ body {
     background: linear-gradient('to bottom', #74ABE2, #5563DE);
     font-family: 'Ropa Sans', sans-serif;
 }
+*/
