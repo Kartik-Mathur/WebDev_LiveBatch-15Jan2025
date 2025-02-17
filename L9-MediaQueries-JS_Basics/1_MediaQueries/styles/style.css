@@ -1,0 +1,64 @@
+/* 768px ya usse badi width par yeh css lagegi */
+@media (min-width: 768px) { 
+    .container {
+        display: flex;
+    }
+
+    main {
+        width: 60%;
+    }
+
+    aside {
+        width: 39%;
+    }
+}
+
+@media (min-width: 992px) {
+    .container{
+        width: 70%;
+    }
+}
+
+/* Jab tak width 576px ya usse choti hai tab tak yeh css lagegi */
+@media (max-width: 576px) {
+    .slider {
+        display: none;
+    }
+}
+
+.container {
+    /* display: flex; */
+    /* background-color: purple; */
+    /* height: 900px; */
+    margin-top: 150px;    
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+}
+
+main,
+aside{
+    padding: 20px;
+}
+
+main {
+    /* height: 100%; */
+    /* width: 60%; */
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+aside {
+    /* height: 100%; */
+    /* width: 59%; */
+    border: 1px solid black;
+    background-color: cadetblue;
+}
+
+footer {
+    height: 500px;
+    width: 100%;
+    background-color: orange;
+    text-align: center;
+    font-size: 40px;
+}

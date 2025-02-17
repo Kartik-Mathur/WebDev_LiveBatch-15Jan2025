@@ -1,0 +1,25 @@
+header{
+    height: 50px;
+    width: 100%;
+    background-color: red;
+    color: white;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+header nav{
+    /* background-color: orange; */
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-right: 40px;
+    align-items: center;
+}
+
+header nav a{
+    color: white;
+    text-decoration: none;
+}
