@@ -4,6 +4,16 @@
     padding: 0;
 }
 
+
+.carousel{
+    height: calc(100vh - 50px);
+    background-color: brown;
+}
+
+
+
+
+
 .slider {
     width: 100vw;
     text-align: center;
