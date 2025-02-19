@@ -11,3 +11,4 @@ function genFun(){
 let fun = genFun(); // genFun ek function return kar raha hai
 
 fun(); // genFun ne jo function return kia usse hum call kar skte h
+

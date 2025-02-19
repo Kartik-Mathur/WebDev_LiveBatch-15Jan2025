@@ -4,7 +4,7 @@ function callFun(fun) { // fun: [Function: helloWorld]
 
 
 function helloWorld() {
-    console.log("hello world", x);
+    console.log("hello world");
 }
 
 
