@@ -10,7 +10,7 @@ console.log(a);
 
 
 // unshift, shift for operations at the front
-a.unshift(10);
+a.unshift(10); // To insert 10 at front
 console.log(a);
 let x = a.shift(); // shift will return the value that is being removed
 console.log("x", x);
