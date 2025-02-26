@@ -1,4 +1,3 @@
-
 console.log(helloWorld);
 
 var helloWorld = function () {
@@ -8,10 +7,10 @@ var helloWorld = function () {
 console.log(helloWorld);
 
 
-console.log("Say Hello before function calling",sayHello);
+console.log("Say Hello before function calling", sayHello);
 
-function sayHello(){
+function sayHello() {
     console.log("Hello");
 }
 
-console.log("Say Hello Funcn after function calling",sayHello);
+console.log("Say Hello Funcn after function calling", sayHello);

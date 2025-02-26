@@ -1,4 +1,7 @@
+// Only the LHS part will get hoisted in case of var creation. Value will be assigned
+// When the program will RUN 
 var helloWorld;
+// The entire function gets hosited..
 function sayHello() {
     console.log("Hello");
 }
