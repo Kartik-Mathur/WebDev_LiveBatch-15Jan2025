@@ -1,0 +1,5 @@
+Callbacks: https://kbpsystem777.github.io/You-Dont-Know-JS/async&performance/ch2.html
+EloquentJS: https://eloquentjavascript.net/11_async.html
+
+Link: https://kbpsystem777.github.io/You-Dont-Know-JS/
+Eloquent JS: https://eloquentjavascript.net/
