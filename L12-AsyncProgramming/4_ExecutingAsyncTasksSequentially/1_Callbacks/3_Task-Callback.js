@@ -18,4 +18,8 @@ function upload(compressedImg){
 }
 
 // download('http://devanshkisite.ug/image/devansh.jpg')
+// compress('devansh.jpg');
+// upload('devansh.web');
+
+// AB TASK IS TO ENSURE YEH TEENO FUNCTIONS AISE CHALEIN one after another
 // download -> compress -> upload
