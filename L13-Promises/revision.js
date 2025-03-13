@@ -6,7 +6,7 @@ function downloadMovie(url) {
         console.log("Download started");
         setTimeout(() => {
             let movieName = url.split('/').pop();
-            res(movieName)
+            res(movieName) // compress function
         }, 2000);
     })
 }

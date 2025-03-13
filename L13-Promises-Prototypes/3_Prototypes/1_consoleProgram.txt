@@ -1,0 +1,68 @@
+let a = 1;
+undefined
+-----------------------------------------------------------------
+a.__proto__ == Number.prototype
+true
+-----------------------------------------------------------------
+let b = 200;
+undefined
+-----------------------------------------------------------------
+b.__proto__ == Number.prototype
+true
+-----------------------------------------------------------------
+Number.prototype
+Number {0, toExponential: ƒ, toFixed: ƒ, toPrecision: ƒ, toString: ƒ, …}constructor: ƒ Number()toExponential: ƒ toExponential()toFixed: ƒ toFixed()toLocaleString: ƒ toLocaleString()toPrecision: ƒ toPrecision()toString: ƒ toString()valueOf: ƒ valueOf()[[Prototype]]: Object[[PrimitiveValue]]: 0
+-----------------------------------------------------------------
+Number.prototype.cbClasses = function (){
+    console.log("Development classes are fun");
+}
+ƒ (){
+    console.log("Development classes are fun");
+}
+-----------------------------------------------------------------
+Number(1111.11).toPrecision(2)
+'1.1e+3'
+-----------------------------------------------------------------
+111.11.toPrecision(2)
+'1.1e+2'
+-----------------------------------------------------------------
+111.11.toPrecision(3)
+'111'
+-----------------------------------------------------------------
+111.11.toPrecision(5)
+'111.11'
+-----------------------------------------------------------------
+111.11.toPrecision(10)
+'111.1100000'
+-----------------------------------------------------------------
+let a = 11;
+undefined
+-----------------------------------------------------------------
+a.cbClasses()
+Development classes are fun
+-----------------------------------------------------------------
+let b = 200;
+undefined
+-----------------------------------------------------------------
+b.cbClasses()
+Development classes are fun
+-----------------------------------------------------------------
+Number.prototype.toPrecision = function(){
+    console.log("Nahi maanega inbuilt change kar diya meine");
+}
+ƒ (){
+    console.log("Nahi maanega inbuilt change kar diya meine");
+}
+-----------------------------------------------------------------
+a.toPrecision()
+VM2105:2 Nahi maanega inbuilt change kar diya meine
+undefined
+-----------------------------------------------------------------
+a.toPrecision(1)
+VM2105:2 Nahi maanega inbuilt change kar diya meine
+undefined
+-----------------------------------------------------------------
+a.toPrecision(2)
+VM2105:2 Nahi maanega inbuilt change kar diya meine
+undefined
+-----------------------------------------------------------------
