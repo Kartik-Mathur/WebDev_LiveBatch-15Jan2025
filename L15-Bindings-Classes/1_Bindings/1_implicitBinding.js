@@ -1,7 +1,7 @@
 let obj = {
     a: 1,
     b: 'hello',
-    print: function () {
+    print() {
         console.log(this); // this is actually 'Execution content' ka reference
         this.c = 'new c added inside print';
     }
