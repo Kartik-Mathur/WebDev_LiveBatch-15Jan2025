@@ -10,4 +10,4 @@ let obj2 = { b: 2 }
 hello.call(obj1, "Kartik", 20);
 hello.call(obj2, "Yash", 12);
 
-hello("abc",10000); // default binding
+hello("abc", 10000); // default binding
