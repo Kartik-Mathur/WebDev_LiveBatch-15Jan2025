@@ -13,7 +13,6 @@ class Student extends Person {
     }
 }
 
-
 let s = new Student('Vaibhav', 10, 100);
 console.log(s);
 
