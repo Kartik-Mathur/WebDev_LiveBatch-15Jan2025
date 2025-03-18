@@ -10,7 +10,6 @@
 // document.querySelector('body').style.backgroundColor = 'black'
 // document.querySelector('body').style.color = 'white'
 
-
 let movie = document.querySelector('.movie')
 // movie.classList.add('myMovie')
 
