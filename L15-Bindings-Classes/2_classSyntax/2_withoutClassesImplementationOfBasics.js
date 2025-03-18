@@ -3,6 +3,7 @@ function Person(name, age) {
     // this -> {}
     this.name = name;
     this.age = age;
+
     // this-> {name, age}
 }
 
