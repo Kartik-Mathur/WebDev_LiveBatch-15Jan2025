@@ -32,7 +32,7 @@ xhr.onload = (data) => {
     data = JSON.parse(data);
     addToTaskList(data);
 }
-
+// Error aane par yeh hoga!
 xhr.onerror = (errorMsg) => {
     console.log(errorMsg);
 }
