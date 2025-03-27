@@ -1,6 +1,3 @@
-// GOAL: 1. Implement IncreasePriority
-// GOAL: 2. Implement DecreasePriority
-// GOAL: 3. Implement UpdateTask
 
 let input = document.querySelector('input');
 let button = document.querySelector('button');
@@ -88,6 +85,43 @@ class Todo {
         console.log(todos);
         this.refreshTodos();
     }
+
+    static increasePriority(name) {
+        let indx;
+        for (let i = 0; i < todos.length; i++) {
+            if (todos[i].task == name) {
+                indx = i;
+                break;
+            }
+        }
+
+        if (indx > 0) {
+            let previousIndex = indx - 1;
+            let temp = todos[indx];
+            todos[indx] = todos[previousIndex];
+            todos[previousIndex] = temp;
+            this.refreshTodos();
+        }
+    }
+
+
+    static decreasePriority(name) {
+        let indx;
+        for (let i = 0; i < todos.length; i++) {
+            if (todos[i].task == name) {
+                indx = i;
+                break;
+            }
+        }
+
+        if (indx < todos.length - 1) {
+            let nextIndex = indx + 1;
+            let temp = todos[indx];
+            todos[indx] = todos[nextIndex];
+            todos[nextIndex] = temp;
+            this.refreshTodos();
+        }
+    }
 }
 
 Todo.refreshTodos();
@@ -117,5 +151,19 @@ taskList.addEventListener('click', (ev) => {
         taskName = taskName.slice(0, taskName.length - 5);
         // Pick the taskName and updateTodos
         Todo.deleteTask(taskName);
+    }
+    else if (target.classList.contains('increase-priority')) {
+        let currentLiItem = target.parentElement;
+        // console.log(currentLiItem);
+        let taskName = currentLiItem.getAttribute('id');
+        console.log(taskName)
+        Todo.increasePriority(taskName);
+    }
+    else if (target.classList.contains('decrease-priority')) {
+        let currentLiItem = target.parentElement;
+        // console.log(currentLiItem);
+        let taskName = currentLiItem.getAttribute('id');
+        console.log(taskName)
+        Todo.decreasePriority(taskName);
     }
 })
