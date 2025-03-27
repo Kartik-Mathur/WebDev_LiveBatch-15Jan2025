@@ -1,4 +1,3 @@
-
 let input = document.querySelector('input');
 let button = document.querySelector('button');
 // TASK LIST KO SELECT KARO
