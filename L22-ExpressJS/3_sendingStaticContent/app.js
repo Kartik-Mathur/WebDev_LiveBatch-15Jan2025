@@ -7,7 +7,6 @@ const path = require('path'); // provided by nodejs bydefault
 // on to the browser
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // This will not work if there is index.html inside the public folder
 app.get('/', (req, res) => {
     res.send("Hiii!!");
