@@ -1,0 +1,10 @@
+let obj = {a:1}
+undefined
+let obj1 = obj 
+undefined
+obj == obj1
+true
+obj1.a = 100;
+100
+obj
+{a: 100}

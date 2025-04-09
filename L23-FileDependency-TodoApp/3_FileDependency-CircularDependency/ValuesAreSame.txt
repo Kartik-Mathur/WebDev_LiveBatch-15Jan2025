@@ -1,0 +1,12 @@
+let obj = {a:1}
+undefined
+let obj1 = {a:1}
+undefined
+obj === obj1
+false
+obj.a = 100;
+100
+obj
+{a: 100}
+obj1 
+{a: 1}

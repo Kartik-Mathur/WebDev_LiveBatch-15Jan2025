@@ -1,0 +1,14 @@
+> let person = {    name: 'Kartik',    address: 'Delhi',    country: 'India'}
+undefined
+> person
+{ name: 'Kartik', address: 'Delhi', country: 'India' }
+> person.name
+'Kartik'
+> person.address
+'Delhi'
+> let {name, address} = person;
+undefined
+> name
+'Kartik'
+> address
+'Delhi'

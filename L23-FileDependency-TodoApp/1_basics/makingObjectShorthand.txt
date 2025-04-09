@@ -1,0 +1,10 @@
+> let a = 1;
+undefined
+> let obj = {a}
+undefined
+> obj
+{ a: 1 }
+> let obj1 = {"a":a}
+undefined
+> obj1
+{ a: 1 }
