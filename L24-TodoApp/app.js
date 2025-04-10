@@ -4,34 +4,28 @@ const app = express();
 const { v4: uuid } = require('uuid');
 const PORT = 4444;
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded()); // To make req.body readable we use this
+app.use(express.json()); // axios sends the json data
+app.use(express.urlencoded({ extended: true })); // post request by default 
+app.use(express.static(path.join(__dirname, 'public'))); // public folder ko bhejega
 
-let todos = [
-    /*
-    {  
-        task: 'Cricket',
-        id: unique,
-        status: true/false
-    }
-    */
-];
+let todos = [];
 
 app.get('/todos', (req, res) => {
     res.send(todos);
 })
 
 app.post('/todos', (req, res) => {
-    const { task } = req.body;
+    let { task } = req.body;
     todos.push({
+        id: uuid(),
         task,
-        status: false,
-        id: uuid()
-    })
-    res.send({
-        msg: 'Task added successfully',
-        task
+        status: false
     });
+
+    res.send({
+        msg: 'Todo added successfully',
+        task
+    })
 })
 
 app.put('/todos', (req, res) => {
@@ -65,6 +59,7 @@ app.delete('/todos', (req, res) => {
         todos
     })
 })
+
 
 
 app.listen(PORT, () => {
