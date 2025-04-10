@@ -29,8 +29,8 @@ app.post('/todos', (req, res) => {
 })
 
 app.put('/todos', (req, res) => {
-    const { id } = req.body;
-
+    let { id } = req.body;
+    console.log(id)
     todos = todos.map((item) => {
         if (id == item.id) {
             return {
@@ -49,6 +49,7 @@ app.put('/todos', (req, res) => {
 
 app.delete('/todos', (req, res) => {
     const { id } = req.body;
+    console.log(id);
 
     todos = todos.filter(item => {
         return id !== item.id
