@@ -1,6 +1,9 @@
 let taskForm = document.querySelector('#task-form');
 let taskInput = document.querySelector('#task-input');
 let taskList = document.querySelector('#task-list');
+let clearCompleted = document.querySelector('#clear-completed');
+
+let currentTodos = [];
 
 taskList.addEventListener('click', (ev) => {
     // Task list ke andar sabhi par yeh event listener kaam karega
@@ -21,7 +24,7 @@ taskList.addEventListener('click', (ev) => {
         let id = element.children[0].innerText;
 
         axios.delete('/todos', {
-            id
+            data: { id }
         }).then(({ data }) => {
             console.log(data)
             refreshTodos();
@@ -37,10 +40,12 @@ function refreshTodos() {
     // Fetch all the tasks and then load it on to the tasklist again
     axios.get('/todos')
         .then(({ data }) => {
+            console.log(data);
+            currentTodos = data;
+
             data.forEach(d => {
                 let li = document.createElement('li');
                 li.classList.add('task-item');
-
                 li.innerHTML = `
                     <span class="task-text">${d.task}</span>
                     <div class="task-actions">
@@ -59,6 +64,18 @@ function refreshTodos() {
         })
 }
 
+clearCompleted.addEventListener('click', (ev) => {
+    console.log("Clicked")
+    axios.put('/clear-completed')
+        .then(({ data }) => {
+            console.log(data);
+            refreshTodos();
+        }).catch(err => {
+            alert(err.message);
+        })
+})
+
+
 taskForm.addEventListener('submit', (ev) => {
     ev.preventDefault();
     let taskName = taskInput.value;
@@ -74,3 +91,5 @@ taskForm.addEventListener('submit', (ev) => {
         })
 })
 
+//  To load the initial todos 
+refreshTodos();

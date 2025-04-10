@@ -8,7 +8,11 @@ app.use(express.json()); // axios sends the json data
 app.use(express.urlencoded({ extended: true })); // post request by default 
 app.use(express.static(path.join(__dirname, 'public'))); // public folder ko bhejega
 
-let todos = [];
+let todos = [{
+    id: '1',
+    task: 'Cricket',
+    status: false
+}];
 
 app.get('/todos', (req, res) => {
     res.send(todos);
@@ -61,7 +65,14 @@ app.delete('/todos', (req, res) => {
     })
 })
 
-
+app.put('/clear-completed', (req, res) => {
+    todos = todos.filter(item => {
+        return item.status == false
+    })
+    res.send({
+        msg: 'Completed tasks cleared'
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`http://localhost:` + PORT);
