@@ -8,11 +8,7 @@ app.use(express.json()); // axios sends the json data
 app.use(express.urlencoded({ extended: true })); // post request by default 
 app.use(express.static(path.join(__dirname, 'public'))); // public folder ko bhejega
 
-let todos = [{
-    id: '1',
-    task: 'Cricket',
-    status: false
-}];
+let todos = [];
 
 app.get('/todos', (req, res) => {
     res.send(todos);
