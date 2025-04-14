@@ -12,19 +12,14 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 
 // Database Name
-const dbName = 'testDB'; // Agar DB exist karta hai toh select krega, else create krega new DB
-client.connect().then(() => {
-    console.log("NODEJS successfully connected to mongoDB");
+const dbName = 'Todos'; // Agar DB exist karta hai toh select krega, else create krega new DB
 
-    const db = client.db(dbName);
-    const users = db.collection('users');
-    users.find({}).toArray()
-        .then((data) => {
-            console.log(data);
-        })
-        .catch(err => {
-            console.log(err);
-        })
+app.get('/todos', (req, res) => {
+    // returns all the available todos
+})
+
+app.post('/todos', (req, res) => {
+    // Add a new todo to the mongodb database
 })
 
 
