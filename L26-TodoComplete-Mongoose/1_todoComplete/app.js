@@ -3,8 +3,9 @@ const express = require('express');
 const app = express();
 const PORT = 4444;
 
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 const { MongoClient, ObjectId } = require('mongodb');
 
 // Connection URL
@@ -97,6 +98,23 @@ app.delete('/todos', (req, res) => {
 
     res.status(205).json({
         message: "Todo deleted successfully"
+    })
+})
+
+app.put('/clear-completed', (req, res) => {
+    let Todos = db.collection('Todos');
+    Todos.deleteMany({
+        status: true
+    }).then((data) => {
+        console.log(data);
+        res.send({
+            msg: "All completed tasks are cleared",
+            data
+        });
+    }).catch((err) => {
+        res.send({
+            msg: err.message
+        })
     })
 })
 
