@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/Tasks').then((data) => {
     console.log("DB CONNECTED");
 })
 
-// 3. Creating Documents
+// 3. Creating Documents (http://localhost:27017/todos)
 app.post('/todos', (req, res) => {
     const { task } = req.body;
     console.log(req.user); // We can now use the User via req.user, that we have added inside the req object
