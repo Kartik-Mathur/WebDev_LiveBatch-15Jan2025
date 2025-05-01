@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        async function isLoggedIn() {
+            let { data } = await axios.get('/isloggedin');
+            console.log(data)
+            // if (data.isLoggedIn) window.location = 'http://localhost:4444/dashboard.html' // infinite loop
+            if (!data.isLoggedIn) window.location = 'http://localhost:4444/login.html'
+        }
+        isLoggedIn();
+    </script>
+</head>
+
+<body>
+    <h1>Dashboard Page</h1>
+
+
+</body>
+
+</html>

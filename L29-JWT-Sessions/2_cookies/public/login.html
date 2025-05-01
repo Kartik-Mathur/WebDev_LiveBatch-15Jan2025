@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        async function isLoggedIn() {
+            let { data } = await axios.get('/isloggedin');
+            console.log(data)
+            if (data.isLoggedIn) window.location = 'http://localhost:4444/dashboard.html'
+        }
+        isLoggedIn();
+    </script>
+</head>
+
+<body>
+
+    <div style="display: flex; justify-content: space-around;">
+        <a href="/index.html">Home</a>
+        <a href="/signup.html">Signup page</a>
+    </div>
+
+    <h1>Login Page</h1>
+    <small>If you get redirected to login again, that means you need to enter correct creds</small>
+    <small>, If everything goes well you'll be redirected to dashboard page</small>
+    <form action="/login" method="POST">
+        <input type="text" name="email" placeholder="Enter email"><br>
+        <input type="text" name="password" placeholder="Enter password"><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+</body>
+
+</html>
