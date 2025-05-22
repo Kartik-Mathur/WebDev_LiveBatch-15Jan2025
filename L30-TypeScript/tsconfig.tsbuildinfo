@@ -1,0 +1,1 @@
+{"root":["./src/functions.ts","./src/passingfunctiontofunction.ts","./src/script.ts","./src/interfaces/1_interfaces-learn.ts","./src/interfaces/2_interfaces.ts","./src/types_ts/1_types.ts","./src/types_ts/2_typeunion.ts","./src/types_ts/3_typeunionexample.ts","./src/types_ts/4_typeintersectionexample.ts","./src/types_ts/5_task.ts"],"errors":true,"version":"5.8.3"}
