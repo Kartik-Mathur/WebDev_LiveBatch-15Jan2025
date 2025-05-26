@@ -1,0 +1,70 @@
+type Rectangle = {
+  height: number;
+  width: number;
+};
+
+type ThirdAxis = {
+  depth: number;
+};
+
+type Cuboid = Rectangle & ThirdAxis;
+
+let rect: Cuboid = {
+  height: 10,
+  width: 20,
+  depth: 30,
+};
+
+// Type is not a Object but its set of values
+
+/*
+Cuboid: 
+{ height: 150, width: 200, depth: 1 }
+{ height: 150, width: 200, depth: 2 }
+{ height: 150, width: 200, depth: 3 }
+{ height: 150, width: 200, depth: 4 }
+ .
+ .
+ .
+{ height: 150, width: 200, depth: 10000000 }
+ { height: 300, width: 400, depth: 1 }
+ { height: 300, width: 400, depth: 2 }
+ { height: 300, width: 400, depth: 3 }
+ { height: 300, width: 400, depth: 4 }
+  .
+  .
+  .
+ { height: 300, width: 400, depth: 10000000 }
+*/
+
+/*
+ThirdAxis ke set ki values
+{depth: 1}
+{depth: 2}
+{depth: 3}
+{depth: 4}
+.
+.
+.
+.
+{depth: 10000000}
+*/
+
+
+/* Rectangle
+{ height: 150, width: 200 }
+{ height: 300, width: 400 }
+{ height: 100, width: 100 }
+{ height: 250, width: 150 }
+{ height: 120, width: 180 }
+{ height: 500, width: 300 }
+{ height: 80, width: 120 }
+{ height: 200, width: 200 }
+ .
+ .
+ .
+ .
+ .
+{ height: 360, width: 640 }
+{ height: 1024, width: 768 }
+*/

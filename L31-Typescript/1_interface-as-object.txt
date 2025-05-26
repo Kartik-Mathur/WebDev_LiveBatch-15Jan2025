@@ -1,0 +1,16 @@
+// interface Person {
+//   name: string;
+//   age: number;
+//   greet: () => void;
+// }
+
+// let ashish: Person = {
+//   name: "Ashish",
+//   age: 20,
+//   greet() {
+//     console.log("Good evening", this.name);
+//   },
+// };
+
+// console.log(ashish);
+// ashish.greet();

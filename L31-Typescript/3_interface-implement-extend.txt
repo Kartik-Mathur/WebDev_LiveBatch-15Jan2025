@@ -1,0 +1,36 @@
+// Iska khud ka koi astitiv nhi hai, isse aapko create krna padega
+interface Person {
+  name: string;
+  age: number;
+  greet: () => void;
+}
+
+class Mentors implements Person {
+  name: string;
+  age: number;
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log("Good evening", this.name);
+  }
+}
+
+// ----------------------------------------------------------------------------------------------------
+class CppMentor extends Mentors {
+  constructor(name: string, age: number) {
+    super(name, age); // Mentors ke constructor function ko call krega
+  }
+
+  whatDoYouTeach() {
+    console.log("I teach CPP");
+  }
+}
+
+let abhishek = new CppMentor("Abhishek", 24);
+console.log("Name", abhishek.name);
+console.log("Age", abhishek.age);
+abhishek.greet();
+abhishek.whatDoYouTeach();

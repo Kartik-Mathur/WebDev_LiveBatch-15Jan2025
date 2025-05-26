@@ -1,0 +1,59 @@
+// type PersonInfo = {
+//   name: string;
+//   age: number;
+// };
+
+// type StudentInfo = {
+//   marks: number;
+//   subject: string;
+// };
+
+// type Student = PersonInfo & StudentInfo;
+
+// let arnab: Student = {
+//     name: "Arnab",
+//     age: 20,
+//     marks: 100,
+//     subject: 'TypeScript'
+// }
+// console.log(arnab);
+/// ------------------------------------------------------
+// interface PersonInfo {
+//   name: string;
+//   age: number;
+// }
+
+// interface StudentInfo {
+//   marks: number;
+//   subject: string;
+// }
+
+// type Student = PersonInfo & StudentInfo;
+// let arnab: Student = {
+//   name: "Arnab",
+//   age: 20,
+//   marks: 100,
+//   subject: "TypeScript",
+// };
+// console.log(arnab);
+
+/// ------------------------------------------------------
+interface PersonInfo {
+  name: string;
+  age: number;
+}
+
+interface StudentInfo {
+  marks: number;
+  subject: string;
+}
+
+interface Student extends PersonInfo, StudentInfo {}
+
+let arnab: Student = {
+  name: "Arnab",
+  age: 20,
+  marks: 100,
+  subject: "TypeScript",
+};
+console.log(arnab);

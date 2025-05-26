@@ -1,0 +1,27 @@
+interface Instructor {
+  name: string;
+  experience: number;
+  introduce(): void;
+}
+
+class CBInstructor implements Instructor {
+  name: string;
+  experience: number;
+
+  constructor(name: string, experience: number) {
+    this.name = name;
+    this.experience = experience;
+  }
+
+  introduce(): void {
+    console.log(
+      `Hi, I'm ${this.name}, with ${this.experience} years of teaching experience at Coding Blocks.`
+    );
+  }
+}
+
+const instructor1 = new CBInstructor("Varun", 8);
+const instructor2 = new CBInstructor("Kartik", 18);
+
+instructor1.introduce();
+instructor2.introduce();
