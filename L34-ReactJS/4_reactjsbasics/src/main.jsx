@@ -1,10 +1,20 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
+
+function App(Task, Description) {
+  return (
+    <div>
+      <ul>
+        <li>
+          {Task}: {Description}
+        </li>
+      </ul>
+    </div>
+  );
+}
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+  <div>
+    {App("Coding", "Love to Code")}
+    {App("Swim", "Love to Swim")}
+  </div>
 );
