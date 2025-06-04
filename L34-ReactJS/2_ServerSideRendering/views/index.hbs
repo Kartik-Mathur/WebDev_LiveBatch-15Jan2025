@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+
+<body>
+
+    <h1>Todo Application</h1>
+
+    <form action="/addtodo">
+        <input type="text" name="task" id="task" placeholder="enter task"><br>
+        <input type="text" name="description" id="task" placeholder="enter description"><br>
+
+        <button type="submit">Add Todo</button>
+    </form>
+
+    {{#if todos}}
+    <h3>Todos List</h3>
+    <ul>
+        {{#each todos as |t|}}
+            <li>{{t.name}} : {{t.description}}</li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <h3>No Todos To Show Current! Add them to the list</h3>
+    {{/if}}
+
+
+
+</body>
+
+</html>
