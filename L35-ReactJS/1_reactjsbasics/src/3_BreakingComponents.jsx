@@ -1,28 +1,20 @@
 import { createRoot } from "react-dom/client";
 
-// function LoadTodos({ todos }) {
-//   return (
-//     <div>
-//       {todos.map((todo) => {
-//         return (
-//           <div>
-//             {todo.name} : {todo.description}
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// }
+function Todo({ name, description }) {
+  return (
+    <li>
+      {name}: {description}
+    </li>
+  );
+}
 
 function LoadTodos({ todos }) {
   return (
-    <div>
+    <ul>
       {todos.map((todo, indx) => (
-        <div key={indx}>
-          {todo.name} : {todo.description}
-        </div>
+        <Todo key={indx} name={todo.name} description={todo.description} />
       ))}
-    </div>
+    </ul>
   );
 }
 
