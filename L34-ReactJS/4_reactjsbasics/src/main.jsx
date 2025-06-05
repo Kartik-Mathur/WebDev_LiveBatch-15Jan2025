@@ -15,6 +15,8 @@ function App(Task, Description) {
 createRoot(document.getElementById("root")).render(
   <div>
     {App("Coding", "Love to Code")}
-    {App("Swim", "Love to Swim")}
+    {
+    App("Swim", "Love to Swim")
+    }
   </div>
 );
