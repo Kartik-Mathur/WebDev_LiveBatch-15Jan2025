@@ -33,7 +33,7 @@ function DisplayTodos({ todos, deleteTodos, increasePriority,decreasePriority })
     <div>
       {todos.map((t, indx) => (
         <li key={indx}>
-          {t.name}
+          {t.name} - {t.date.toDateString()}
 
           <button onClick={() => deleteTodos(t.id)}>❌</button>
           <button onClick={() => increasePriority(t.id)}>↑</button>
@@ -45,9 +45,7 @@ function DisplayTodos({ todos, deleteTodos, increasePriority,decreasePriority })
 }
 
 function TodoApp() {
-  const { todos, addTodos, deleteTodos, increasePriority,decreasePriority } = useTodos();
-
-  console.log(todos);
+  const { todos, addTodos, deleteTodos, increasePriority, decreasePriority } = useTodos();
 
   return (
     <div>
