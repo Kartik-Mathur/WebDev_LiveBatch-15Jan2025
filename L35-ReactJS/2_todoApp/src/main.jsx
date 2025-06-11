@@ -1,5 +1,6 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
+import InfiniteLoop from "./InfiniteLoop";
 
 function TodoInput({todos, setTodos, taskValue, setTaskValue}){
   
@@ -9,12 +10,15 @@ function TodoInput({todos, setTodos, taskValue, setTaskValue}){
     setTodos([...todos, taskValue]); // todos ko immutable kaha hai, toh we cannot change it
   }
 
+  console.log("Running Todo Inp")
   return (
     <form action="#" onSubmit={addTodosHelper}>
+      
       <input onChange={(ev)=>{
         // console.log(ev.target.value)
         setTaskValue(ev.target.value); 
       }} type="text" name="task" id="task" placeholder="Enter Task Name" /> <br />
+
       <button type="submit">Add Task</button>
     </form>
   );
@@ -22,6 +26,7 @@ function TodoInput({todos, setTodos, taskValue, setTaskValue}){
 
 
 function TodoDisplay({todos}){
+  console.log("Running Todo Display")
   return (
     <ul className="tasklist">
       {todos.map((todo,indx)=>
@@ -32,7 +37,9 @@ function TodoDisplay({todos}){
 }
 
 function TodoApp() {
-  const [todos, setTodos]=useState([]);
+  console.log("Running Todo App")
+
+  const [todos, setTodos]=useState(["Cricket"]);
   const [taskValue, setTaskValue] = useState("");
 
   return (
