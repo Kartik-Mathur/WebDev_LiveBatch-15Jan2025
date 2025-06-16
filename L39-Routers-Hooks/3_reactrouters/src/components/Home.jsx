@@ -1,0 +1,15 @@
+import React from 'react'
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Home page</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo doloremque, quidem debitis dolorum ipsum, doloribus tempora laborum nam fugiat sunt eligendi! Soluta aliquam iste quibusdam. Laborum quos facilis quis nisi deleniti, dolor impedit tempore earum voluptate inventore vitae. Ad eius, amet sequi asperiores ratione sit, laboriosam quam minima quasi quidem minus? Magni aspernatur ipsam alias pariatur porro, ullam vero possimus sunt totam nam nesciunt rem iusto fugiat quidem dolores blanditiis iste quo perferendis excepturi. Aut quasi hic magni voluptatibus quod ipsum illo pariatur? Cumque aliquam ullam, architecto, ex autem rem ipsa odit nostrum nulla et culpa, odio molestias ad soluta aliquid fugiat aspernatur laudantium placeat mollitia. Ea cupiditate beatae odio. Quis quae alias nulla, error similique libero. Laborum impedit atque repudiandae eius voluptatem dolores temporibus reprehenderit, blanditiis quod accusamus sint, earum dolore voluptas, nulla accusantium! Ipsam consectetur error fugiat vitae ipsum accusamus ex, quibusdam illo unde sequi alias reprehenderit sapiente, fuga obcaecati, eum debitis? Incidunt, culpa fugiat consequuntur repudiandae doloremque quam id doloribus laboriosam nesciunt perspiciatis, et autem in iure iste ea unde dolorem porro sequi beatae distinctio corporis placeat quidem omnis aliquid. Odit quasi fugiat qui. Eos dolorum repellat fugit perferendis? Labore dolores hic asperiores officia excepturi, repellat porro eligendi impedit architecto doloribus animi magni maxime provident saepe quod numquam. Ipsa necessitatibus porro fuga molestiae error expedita amet cum nam, ducimus autem labore a ipsum vel, temporibus perspiciatis quis dicta itaque? Officia vero, praesentium id incidunt, at ipsum magnam in labore quos magni fugit nisi consequatur quisquam ipsam sed rem dolore? At, distinctio sint, minima ad eaque ipsum maiores alias explicabo quis neque tenetur. Beatae corporis, error quaerat molestias cum maxime culpa facere repellat sit sint laboriosam, recusandae, accusamus incidunt minus. Mollitia repellendus id eligendi soluta porro fugiat nostrum ducimus, veritatis asperiores quidem est rerum cupiditate, perferendis maxime suscipit ipsum sint animi architecto. Magni animi qui neque incidunt voluptas fuga accusamus minus laudantium quae dolorem ducimus mollitia id minima, voluptatibus commodi hic, consectetur sit sunt natus assumenda laborum. Officiis, eius molestias? Odit earum aut dignissimos possimus fuga, ab maiores doloribus sequi cupiditate aperiam iste? Deleniti repudiandae sunt eligendi veritatis nemo eaque magni nulla ipsam rerum iure. Nemo, suscipit, itaque facere provident delectus repellat, ad vel nam a maiores dicta repellendus tempora saepe fugit. Quam ab repudiandae nostrum iste natus repellat eos. Rem, laborum blanditiis. Unde, labore consectetur numquam mollitia optio nulla delectus quasi repellendus enim expedita modi, architecto veniam!
+      </p>
+    </div>
+  )
+}
+
+export default Home

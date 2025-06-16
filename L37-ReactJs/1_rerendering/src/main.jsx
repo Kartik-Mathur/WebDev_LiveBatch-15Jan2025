@@ -1,10 +1,10 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
-import RenderFix1 from "./RenderFix1";
+import RenderFix2 from "./RenderFix2";
 
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RenderFix1 />
+    <RenderFix2 />
   </StrictMode>
 );
