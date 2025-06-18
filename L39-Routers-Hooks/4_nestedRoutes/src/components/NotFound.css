@@ -1,0 +1,30 @@
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+}
+
+.not-found-text {
+    font-size: 3rem;
+    animation: bounceFade 2s ease-in-out;
+}
+
+@keyframes bounceFade {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

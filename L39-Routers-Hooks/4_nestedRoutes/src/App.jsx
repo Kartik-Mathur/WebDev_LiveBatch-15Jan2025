@@ -3,11 +3,12 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import { useState } from "react";
-import { Link, Route, Routes } from "react-router";
+import { Link, Route, Routes, Navigate } from "react-router";
 import Navbar from "./components/Navbar";
 import Centers from "./components/Centers";
 import Team from "./components/Team";
 import TeamPlayer from "./components/TeamPlayer";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
@@ -25,6 +26,8 @@ const App = () => {
           <Route path="center" element={<Centers />} />
         </Route>
         <Route path="/contact" element={<Contact />}></Route>
+        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
