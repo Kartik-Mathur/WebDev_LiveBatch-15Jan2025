@@ -77,6 +77,7 @@ export default function Login() {
           value={form.email}
           onChange={handleChange}
           style={styles.input}
+          autoComplete="current-email"
           required
         />
         <input
@@ -86,6 +87,7 @@ export default function Login() {
           value={form.password}
           onChange={handleChange}
           style={styles.input}
+          autoComplete="current-password"
           required
         />
         <button type="submit" style={styles.button}>

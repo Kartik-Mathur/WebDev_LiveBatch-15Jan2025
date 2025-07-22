@@ -84,6 +84,7 @@ const AdminPortal = () => {
           {data.map((p, i) => (
             <li key={i} style={styles.listItem}>
               <p style={styles.title}>{p.title}</p>
+              <p style={styles.title}>{p.author.username}</p>
               <div style={styles.buttons}>
                 <button
                   style={{ ...styles.button, ...styles.editButton }}

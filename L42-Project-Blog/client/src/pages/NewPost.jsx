@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createPost } from "../api/posts";
+// import { createPost } from "../api/posts";
 import { useNavigate } from "react-router-dom";
 import { useCreatePostMutation } from "../services/api";
 
@@ -9,7 +9,7 @@ const NewPost = () => {
     content: "",
   });
 
-  //  const [createPost] = useCreatePostMutation();
+   const [createPost] = useCreatePostMutation();
 
   const navigate = useNavigate();
 
