@@ -1,49 +1,53 @@
 import React, { useState } from "react";
+import { createPost } from "../api/posts";
 import { useNavigate } from "react-router-dom";
-import { signup } from "../api/auth";
+import { useCreatePostMutation } from "../services/api";
 
-const Signup = () => {
+const NewPost = () => {
   const [form, setForm] = useState({
-    username: "",
-    email: "",
-    password: "",
+    title: "",
+    content: "",
   });
+
+  //  const [createPost] = useCreatePostMutation();
+
   const navigate = useNavigate();
 
   const handleChange = ({ target: { name, value } }) =>
-    setForm((f) => ({ ...f, [name]: value }));
+    setForm((prevData) => ({ ...prevData, [name]: value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      console.log(form);
-      await signup(form.username, form.email, form.password);
-      navigate("/dashboard");
-    } catch (err) {
-      console.error("Signup error:", err);
-    }
+    await createPost({ content: form.content, title: form.title });
+    navigate("/admin");
   };
 
   const styles = {
     container: {
-      minHeight: "85vh",
       display: "flex",
+      flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "#f4f4f4",
+      minHeight: "85vh",
       padding: "2rem",
-      fontFamily: "'Segoe UI', sans-serif",
+      fontFamily: "Arial, sans-serif",
+      backgroundColor: "#f4f6f8",
     },
     form: {
       backgroundColor: "#fff",
       padding: "2rem",
       borderRadius: "8px",
       boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+      width: "100%",
+      maxWidth: "500px",
       display: "flex",
       flexDirection: "column",
-      gap: "1.2rem",
-      width: "100%",
-      maxWidth: "400px",
+      gap: "1rem",
+    },
+    heading: {
+      marginBottom: "1rem",
+      textAlign: "center",
+      color: "#333",
     },
     input: {
       padding: "12px",
@@ -53,8 +57,15 @@ const Signup = () => {
       outline: "none",
       transition: "border-color 0.3s",
     },
-    inputFocus: {
-      borderColor: "#007bff",
+    textarea: {
+      padding: "12px",
+      fontSize: "1rem",
+      borderRadius: "6px",
+      border: "1px solid #ccc",
+      outline: "none",
+      resize: "vertical",
+      height: "150px",
+      transition: "border-color 0.3s",
     },
     button: {
       padding: "12px",
@@ -64,58 +75,40 @@ const Signup = () => {
       border: "none",
       borderRadius: "6px",
       cursor: "pointer",
-      fontWeight: "bold",
-      letterSpacing: "0.5px",
       transition: "background-color 0.3s",
     },
     buttonHover: {
       backgroundColor: "#0056b3",
-    },
-    heading: {
-      marginBottom: "1rem",
-      textAlign: "center",
-      fontSize: "1.5rem",
-      color: "#333",
     },
   };
 
   return (
     <div style={styles.container}>
       <form onSubmit={handleSubmit} style={styles.form}>
-        <h2 style={styles.heading}>Create an Account</h2>
+        <h2 style={styles.heading}>📝 Add a New Post</h2>
         <input
-          value={form.username}
-          name="username"
           onChange={handleChange}
+          name="title"
           type="text"
-          placeholder="Enter Username"
+          value={form.title}
+          placeholder="Enter Title"
           style={styles.input}
           required
         />
-        <input
-          value={form.email}
-          name="email"
+        <textarea
           onChange={handleChange}
-          type="email"
-          placeholder="Enter Email"
-          style={styles.input}
-          required
-        />
-        <input
-          value={form.password}
-          name="password"
-          onChange={handleChange}
-          type="password"
-          placeholder="Enter Password"
-          style={styles.input}
+          name="content"
+          value={form.content}
+          placeholder="Enter Content"
+          style={styles.textarea}
           required
         />
         <button type="submit" style={styles.button}>
-          Sign Up
+          ➕ Add Post
         </button>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default NewPost;
