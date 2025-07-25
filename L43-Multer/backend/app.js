@@ -41,8 +41,7 @@ const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
         folder: 'some-folder-name',
-        format: async (req, file) => 'jpg', 
-        public_id: (req, file) => 'computed-filename-using-request',
+        allowed_formats: ['jpg', 'jpeg', 'png'],
         transformation: [{
             height: 1000,
             width: 1000,
@@ -52,7 +51,7 @@ const storage = new CloudinaryStorage({
 });
 const upload = multer({
     storage: storage,
-    limits: { fieldSize: 2 * 1024 * 1024 }
+    limits: { fileSize: 2 * 1024 * 1024 }
 })
 
 app.use(express.urlencoded({ extended: true }));

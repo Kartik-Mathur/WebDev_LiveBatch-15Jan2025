@@ -8,12 +8,13 @@ const App = () => {
 
   function handleFile(e) {
     const reader = new FileReader();
-    // console.log(e.target.files[0]);
+    console.log(e.target.files[0]);
     reader.readAsDataURL(e.target.files[0]);
+    setImgData(e.target.files[0]);
 
     reader.onloadend = () => {
       console.log("DONE");
-      setImgData(reader.result);
+
       console.log(reader.result);
     };
   }
@@ -25,7 +26,7 @@ const App = () => {
       method: "post",
       url: "http://localhost:4444/",
       data: formdata,
-      headers: { "Content-Type": "multipart/form-data" },
+      // headers: { "Content-Type": "multipart/form-data" },
     })
       .then(function ({ data }) {
         console.log(data);
