@@ -35,11 +35,30 @@ export const api = createApi({
         editPost: builder.mutation({
             query: ({ id, ...post }) => ({ url: `/posts/${id}`, method: "PUT", body: post }),
             invalidatesTags: ['Posts']
-        })
+        }),
         // deletePost: builder.mutation({
         //     query: (id) => ({ url: `/posts/${id}`, method: 'DELETE' }),
         //     invalidatesTags: ['Posts'],
         // }),
+        fetchTags: builder.query({
+            query: () => '/tags',
+            providesTags: ['Tags'],
+        }),
+        createTag: builder.mutation({
+            query: (tagData) => ({
+                url: '/tags',
+                method: 'POST',
+                body: tagData,
+            }),
+            invalidatesTags: ['Tags'],
+        }),
+        deleteTag: builder.mutation({
+            query: (id) => ({
+                url: `/tags/${id}`,
+                method: 'DELETE',
+            }),
+            invalidatesTags: ['Tags'],
+        }),
     }),
 });
 
@@ -50,5 +69,8 @@ export const {
     useFetchPostsQuery,
     useCreatePostMutation,
     // useDeletePostMutation,
-    useEditPostMutation
+    useEditPostMutation,
+    useCreateTagMutation,
+    useDeleteTagMutation,
+    useFetchTagsQuery
 } = api;

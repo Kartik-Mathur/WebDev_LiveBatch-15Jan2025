@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { createPost } from "../api/posts";
 import { useNavigate } from "react-router-dom";
-import { useCreatePostMutation } from "../services/api";
+import { useCreatePostMutation, useFetchTagsQuery } from "../services/api";
 
 const NewPost = () => {
   const [form, setForm] = useState({
@@ -9,17 +9,57 @@ const NewPost = () => {
     content: "",
   });
 
-   const [createPost] = useCreatePostMutation();
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [createPost, { isLoading: isSubmitting }] = useCreatePostMutation();
+
+  const [image, setImage] = useState(null);
+  const [preview, setPreview] = useState(null);
+  const { data: tags = [], isLoading: tagsLoading } = useFetchTagsQuery();
 
   const navigate = useNavigate();
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => setPreview(reader.result);
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const toggleTag = (tagId) => {
+    setSelectedTags((prev) =>
+      prev.includes(tagId)
+        ? prev.filter((id) => id !== tagId)
+        : [...prev, tagId]
+    );
+  };
 
   const handleChange = ({ target: { name, value } }) =>
     setForm((prevData) => ({ ...prevData, [name]: value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("title", form.title);
+    formData.append("content", form.content);
+    formData.append("tagIds", JSON.stringify(selectedTags));
+    if (image) {
+      formData.append("file", image);
+    }
+
+    try {
+      await createPost(formData);
+      navigate("/admin");
+    } catch (err) {
+      navigate("/admin/new");
+      console.error("Failed to create post:", err);
+    }
+    /* // This is before image data
     await createPost({ content: form.content, title: form.title });
     navigate("/admin");
+    */
   };
 
   const styles = {
@@ -67,6 +107,20 @@ const NewPost = () => {
       height: "150px",
       transition: "border-color 0.3s",
     },
+    fileInput: {
+      padding: "10px",
+      fontSize: "1rem",
+      borderRadius: "6px",
+      border: "1px solid #ccc",
+      backgroundColor: "#fdfdfd",
+    },
+    imagePreview: {
+      width: "100%",
+      height: "auto",
+      borderRadius: "6px",
+      marginTop: "10px",
+      objectFit: "cover",
+    },
     button: {
       padding: "12px",
       fontSize: "1rem",
@@ -77,8 +131,20 @@ const NewPost = () => {
       cursor: "pointer",
       transition: "background-color 0.3s",
     },
-    buttonHover: {
-      backgroundColor: "#0056b3",
+    tagSection: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "0.5rem",
+    },
+    tagList: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "10px",
+    },
+    tagItem: {
+      display: "flex",
+      alignItems: "center",
+      gap: "6px",
     },
   };
 
@@ -103,8 +169,49 @@ const NewPost = () => {
           style={styles.textarea}
           required
         />
-        <button type="submit" style={styles.button}>
-          ➕ Add Post
+
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+          style={styles.fileInput}
+        />
+
+        {preview && (
+          <img src={preview} alt="Preview" style={styles.imagePreview} />
+        )}
+
+        {tagsLoading ? (
+          <p>Loading tags...</p>
+        ) : (
+          <div style={styles.tagSection}>
+            <p style={{ fontWeight: "bold" }}>Select Tags:</p>
+            <div style={styles.tagList}>
+              {tags.map((tag) => (
+                <label key={tag.id} style={styles.tagItem}>
+                  <input
+                    type="checkbox"
+                    value={tag.id}
+                    checked={selectedTags.includes(tag.id)}
+                    onChange={() => toggleTag(tag.id)}
+                  />
+                  {tag.name}
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <button
+          type="submit"
+          style={{
+            ...styles.button,
+            backgroundColor: isSubmitting ? "#6c757d" : "#007bff",
+            cursor: isSubmitting ? "not-allowed" : "pointer",
+          }}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Adding..." : "Add Post"}
         </button>
       </form>
     </div>

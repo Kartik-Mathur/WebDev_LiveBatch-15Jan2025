@@ -19,6 +19,8 @@ app.use(cors({
 // /api/auth
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/posts', require('./routes/posts'));
+app.use("/api/tags", require("./routes/tags"));
+
 app.get('/api/auth/me', async (req, res) => {
     const { token } = req.cookies;
     console.log(token);

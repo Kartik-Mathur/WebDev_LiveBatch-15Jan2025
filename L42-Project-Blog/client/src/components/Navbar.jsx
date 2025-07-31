@@ -105,6 +105,17 @@ const Navbar = () => {
             >
               New Post
             </NavLink>
+
+            <NavLink
+              to="/admin/tags"
+              style={({ isActive }) =>
+                isActive
+                  ? { ...styles.link, ...styles.activeLink }
+                  : styles.link
+              }
+            >
+              Tags
+            </NavLink>
           </>
         )}
       </div>
